@@ -16,7 +16,7 @@ body {
   font-family: 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
   position: relative;
   min-height: 100%;
-  padding-bottom: 10vh;
+  padding-bottom: 7.5vh;
 }
 
 /* General Nav Links */
@@ -62,7 +62,7 @@ a.nav-link:hover {
 }
 
 .navigation-main {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   background: var(--color-pri-500);
 }
