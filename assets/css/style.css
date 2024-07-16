@@ -20,7 +20,7 @@ body {
 }
 
 /* General Nav Links */
-a,
+
 a.nav-link {
   color: var(--color-sec-200);
   letter-spacing: 0.025rem;
@@ -30,6 +30,10 @@ a.nav-link {
 a.nav-link.active {
   color: var(--color-sec-700);
   font-weight: 800;
+}
+
+a {
+  color: red;
 }
 a:hover,
 a.nav-link:focus,
@@ -42,18 +46,49 @@ a.nav-link:hover {
   text-shadow: var(--text-shadow);
 }
 
+[class^='event-border--'] {
+  border-bottom: solid 2px;
+  transition: var(--transition);
+  border-color: var(--bg, var(--color-wbr));
+  background: linear-gradient(to top, var(--bg, var(--color-wbr)) 50%, transparent 50%) left top;
+  background-size: 100% 200%;
+  padding: 0 0.15em;
+  width: fit-content;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+[class^='event-border--']:hover {
+  color: #fff;
+  text-decoration: none;
+  background-position: left bottom;
+  border-radius: 0.25em;
+}
+.event-border--wbr {
+  --bg: var(--color-wbr);
+}
+.event-border--connect {
+  --bg: var(--color-connect);
+}
+.event-border--insights {
+  --bg: var(--color-insights);
+}
+
+.bg-overlay {
+  border-image: fill 1 linear-gradient(var(--bg-color-s, rgba(0, 0, 0, 0.6)), var(--bg-color-e, rgba(0, 0, 0, 0.6)));
+}
+
 /* Button Hero Global */
-.btn-hero {
-  background-color: var(--color-bg, var(--color-sec-700));
-  color: var(--color-fg, var(--color-sec-200));
-  padding: 0.75em 0;
+.btn-event {
+  --bs-btn-padding-y: 0.75rem;
+  background-color: var(--bg-color, var(--color-sec-700));
+  color: var(--fg-color, var(--color-sec-200));
   transition: var(--transition);
   text-shadow: var(--text-shadow);
 }
 
-.btn-hero:hover {
-  background-color: var(--color-bg, var(--color-sec-700));
-  color: var(--color-fg, var(--color-sec-200));
+.btn-event:hover {
+  background-color: var(--bg-color, var(--color-sec-700));
+  color: var(--fg-color, var(--color-sec-200));
   transform: translateY(-5px) scale(0.98);
 }
 
@@ -71,74 +106,77 @@ a.nav-link:hover {
 }
 
 .navigation-main-visible .nav-logo {
-  max-width: 5vw;
+  max-width: 7vw;
 }
 
 .hero {
   background: url('https://shared.wbresearch.com/WBR/images/hero-slices.jpg') center top no-repeat scroll;
   background-size: cover;
   box-shadow: inset 10000px 0 0 rgba(66, 29, 214, 0.41);
-  height: 85vh;
+  min-height: 85vh;
   margin-top: -5rem;
 }
 
-@supports (color: hsl(from white h s l)) {
-  .hero [class^='col']:first-child .btn-hero {
-    --color-bg: hsl(from var(--color-wbr) h s l / 0.85);
-  }
-  .hero [class^='col']:first-child .btn-hero:hover {
-    --color-bg: hsl(from var(--color-wbr) h s l / 1);
-  }
-  .hero [class^='col']:nth-child(2) .btn-hero {
-    --color-bg: hsl(from var(--color-connect) h s l / 0.85);
-  }
-  .hero [class^='col']:nth-child(2) .btn-hero:hover {
-    --color-bg: hsl(from var(--color-connect) h s l / 1);
-  }
-  .hero [class^='col']:last-child .btn-hero {
-    --color-bg: hsl(from var(--color-insights) h s l / 0.85);
-  }
-  .hero [class^='col']:last-child .btn-hero:hover {
-    --color-bg: hsl(from var(--color-insights) h s l / 1);
-  }
-}
-
-.home-intro [class^='border-'] {
-  border-bottom: solid 2px;
-  transition: var(--transition);
-  border-color: var(--bg, var(--color-wbr));
-  background: linear-gradient(to top, var(--bg, var(--color-wbr)) 50%, transparent 50%) left top;
-  background-size: 100% 200%;
-}
-.home-intro [class^='border-']:hover {
-  color: #fff;
-  text-decoration: none;
-  background-position: left bottom;
-  padding: 0 0.15em;
-  border-radius: 0.25em;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-}
-.home-intro .border-wbr {
-  --bg: var(--color-wbr);
-}
-.home-intro .border-connect {
-  --bg: var(--color-connect);
-}
-.home-intro .border-insights {
-  --bg: var(--color-insights);
-}
-
 @media (min-width: 768px) {
-  body {
-    padding-bottom: 0;
-  }
-
   .navigation-main {
     position: sticky;
     background: none;
   }
   .navigation-main-visible .nav-link {
     font-size: 1.1rem;
+  }
+}
+
+.row-slanted {
+  --p: 15%; /* change the shape  */
+  max-height: 70vh;
+  width: 100vw;
+  clip-path: polygon(0 var(--p), 100% 0, 100% calc(100% - var(--p)), 0 100%);
+  background: var(--bg-img, var(--bs-gray)) fixed center center no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.row-slanted:not(:first-child) {
+  margin-top: -4.5rem; /* Spacing between every row after the first*/
+}
+.row-slanted:first-child {
+  --bg-img: url('https://assets.wbresearch.com/WBR/images/bg-conference.jpg');
+}
+.row-slanted:nth-child(2) {
+  --bg-img: url('https://assets.wbresearch.com/WBR/images/bg-conference.jpg');
+}
+.row-slanted:last-child {
+  --bg-img: url('https://assets.wbresearch.com/WBR/images/bg-conference.jpg');
+}
+
+@supports (color: hsl(from white h s l)) {
+  .hero [class^='col']:first-child .btn-event {
+    --bg-color: hsl(from var(--color-wbr) h s l / 0.85);
+  }
+  .hero [class^='col']:first-child .btn-event:hover {
+    --bg-color: hsl(from var(--color-wbr) h s l / 1);
+  }
+  .hero [class^='col']:nth-child(2) .btn-event {
+    --bg-color: hsl(from var(--color-connect) h s l / 0.85);
+  }
+  .hero [class^='col']:nth-child(2) .btn-event:hover {
+    --bg-color: hsl(from var(--color-connect) h s l / 1);
+  }
+  .hero [class^='col']:last-child .btn-event {
+    --bg-color: hsl(from var(--color-insights) h s l / 0.85);
+  }
+  .hero [class^='col']:last-child .btn-event:hover {
+    --bg-color: hsl(from var(--color-insights) h s l / 1);
+  }
+  /* Row Slanted BG Overlays */
+  .row-slanted:first-child.bg-overlay {
+    --bg-color-s: hsl(from var(--color-wbr) h s l / 0.35);
+  }
+  .row-slanted:nth-child(2).bg-overlay {
+    --bg-color-e: hsl(from var(--color-connect) h s l / 0.35);
+  }
+  .row-slanted:last-child.bg-overlay {
+    --bg-color-s: hsl(from var(--color-insights) h s l / 0.35);
   }
 }

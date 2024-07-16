@@ -18,14 +18,14 @@
       <div class="row justify-content-around align-items-center">
         <div class="col-8 col-md-10">
           <a
-            class="link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover"
+            class="link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover link-light"
             href="https://www.wbresearch.com/"
             >Worldwide Business Research</a
           >
         </div>
         <div class="col d-flex column-gap-3 justify-content-end">
           <a href=""><i class="bi bi-linkedin text-white"></i></a>
-          <a href="">
+          <a href="" class="link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover link-light">
             <p class="text-white mb-0 bg-primary rounded px-1">
               <i class="bi bi-person-fill-add"></i>
               <small>Jobs</small>
@@ -34,7 +34,7 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid navigation-main py-2 px-0 py-md-0">
+    <div class="container-fluid navigation-main py-2 px-0 py-md-0 z-1">
       <div class="container">
         <div class="row navigation-main-visible">
           <div class="col-md-12">
@@ -43,7 +43,7 @@
                 <a class="nav-link p-0 active" aria-current="page" href="#">Conferences</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link p-0" href="#">Connect Events</a>
+                <a class="nav-link p-0" href="#">Connect <span class="d-none d-md-inline">Events</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link p-0" href="#"
@@ -51,23 +51,33 @@
                 /></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link p-0" href="#">WBR Insights</a>
+                <a class="nav-link p-0" href="#"><span class="d-none d-md-inline">WBR</span> Insights</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link p-0" href="#">About Us</a>
+                <a class="nav-link p-0" href="#">About <span class="d-none d-md-inline">Us</span></a>
               </li>
             </ul>
           </div>
         </div>
         <hr class="text-white w-10 mx-auto my-2 d-md-none" />
-        <div class="row navigation-main-hidden justify-content-around align-items-center d-md-none my-1">
-          <div class="col">
-            <a class="opacity-50" href="https://www.wbresearch.com/"><small>Worldwide Business Research</small></a>
+        <div class="row navigation-main-hidden flex-nowrap justify-content-between align-items-center d-md-none my-1">
+          <div class="col-7">
+            <a
+              class="link-light opacity-50 link-underline-opacity-0 link-underline-opacity-75-hover"
+              href="https://www.wbresearch.com/"
+              ><small>Worldwide Business Research</small></a
+            >
           </div>
-          <div class="col d-flex column-gap-3 justify-content-end">
-            <a class="opacity-50" href="#"><small>Privacy</small></a>
-            <a class="opacity-50" href="#"><small>Cookies</small></a>
-            <a class="opacity-50" href="#"><small>Terms</small></a>
+          <div class="col d-flex column-gap-2 justify-content-end">
+            <a class="link-light opacity-50 link-underline-opacity-0 link-underline-opacity-75-hover" href="#"
+              ><small>Privacy</small></a
+            >
+            <a class="link-light opacity-50 link-underline-opacity-0 link-underline-opacity-75-hover" href="#"
+              ><small>Cookies</small></a
+            >
+            <a class="link-light opacity-50 link-underline-opacity-0 link-underline-opacity-75-hover" href="#"
+              ><small>Terms</small></a
+            >
           </div>
         </div>
       </div>
@@ -81,18 +91,18 @@
         </div>
         <div class="row g-2">
           <div class="col-md-12 col-lg-4">
-            <a class="btn btn-hero btn-xl d-flex flex-column" href=""
+            <a class="btn btn-event btn-lg d-flex flex-column" href=""
               ><strong class="text-uppercase fs-5">Conferences</strong><span>Senior Level Forums</span></a
             >
           </div>
           <div class="col-md-12 col-lg-4">
-            <a class="btn btn-hero btn-xl d-flex flex-column" href=""
+            <a class="btn btn-event btn-lg d-flex flex-column" href=""
               ><strong class="text-uppercase fs-5">Connect Events</strong
               ><span>Intimate Networking & Solutions</span></a
             >
           </div>
           <div class="col-md-12 col-lg-4">
-            <a class="btn btn-hero btn-xl d-flex flex-column" href=""
+            <a class="btn btn-event btn-lg d-flex flex-column" href=""
               ><strong class="text-uppercase fs-5">Wbr Insights</strong><span>Market Research & Webinars</span></a
             >
           </div>
@@ -105,10 +115,61 @@
         <div class="col-md-10 mx-auto">
           <p class="fs-1 fw-light text-center">
             Connect with leading minds through
-            <span class="border-wbr">exciting virtual and in-person conferences</span>,
-            <span class="border-connect">networking events</span>, and
-            <span class="border-insights">exceptional custom content</span>.
+            <span class="event-border--wbr">exciting virtual and in-person conferences</span>,
+            <span class="event-border--connect">networking events</span>, and
+            <span class="event-border--insights">exceptional custom content</span>.
           </p>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid overflow-hidden">
+      <div class="row align-items-center row-slanted py-5 bg-overlay">
+        <div class="col-md-10 mx-auto py-5">
+          <div class="row py-5">
+            <div class="col-md-7 py-0 py-md-5">
+              <h2 class="display-4 fw-bold"><span class="event-border--wbr">Conferences</span></h2>
+              <h3>Senior Level Forums</h3>
+              <p class="lead fw-normal">
+                Connect with and learn from other leaders in your industry from around the world. We offer over a
+                hundred annual conferences combining formal presentations, informal interactive sessions and fun
+                networking activities.
+              </p>
+              <a class="btn btn-outline-light btn-lg" href="#">View Our Full List of Conferences</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-center row-slanted py-5 bg-overlay">
+        <div class="col-md-10 mx-auto py-5">
+          <div class="row py-5">
+            <div class="col-md-7 ms-md-auto text-end py-0 py-md-5">
+              <h2 class="display-4 fw-bold"><span class="event-border--connect">Connect Events</span></h2>
+              <h3>Intimate Networking and Solutions</h3>
+              <p class="lead fw-normal">
+                Save months of sourcing and evaluating solution providers to find what's right for your company. Our
+                <a href="#">Connect Events</a> put you in an exclusive environment with only the most relevant partners
+                and peers.
+              </p>
+              <a class="btn btn-outline-light btn-lg" href="#">Start the Conversation</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-center row-slanted py-5 bg-overlay">
+        <div class="col-md-10 mx-auto py-5">
+          <div class="row py-5">
+            <div class="col-md-7 py-0 py-md-5">
+              <h2 class="display-4 fw-bold"><span class="event-border--insights">WBR Insights </span></h2>
+              <h3>Market Research and Webinars</h3>
+              <p class="lead fw-normal">
+                With over 300 <a href="#">research reports</a> and 400 <a href="#">successful webinars</a> in the past 5
+                years, our client partners rave about the quality and flawless execution they get when partnering with
+                <a href="#">WBR Insights</a>. We'll work closely with you to better understand the markets you serve and
+                meet your demand generation needs.
+              </p>
+              <a class="btn btn-outline-light btn-lg" href="#">Expanding Your Presence</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
